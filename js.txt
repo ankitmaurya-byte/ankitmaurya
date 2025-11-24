@@ -91,12 +91,12 @@
       const showcaseReel = document.querySelector('.Features_showcaseReel__g17fo');
 
       const allALSOWindows = document.querySelectorAll('.ALSOWindow_alsoWindowOuter__IPv1c');
-      const pepcodingWindow = document.querySelector('.CalculatorTimeShowcase_alsoWindowOuter__4FPqB');
+      const datamingleWindow = document.querySelector('.CalculatorTimeShowcase_alsoWindowOuter__4FPqB');
 
       const windows = [
         allALSOWindows[0],
         allALSOWindows[1],
-        pepcodingWindow
+        datamingleWindow
       ];
 
       let activeIndex = 0;
@@ -149,16 +149,16 @@
       // Content for all windows
       const windowContents = {
         0: {
-          title: 'Particle41',
-          content: "At Particle41, I wasn’t just writing features — I was engineering systems that teams relied on every day. From designing workflow platforms to building automation pipelines that eliminated hours of manual effort, every project pushed me to solve complex problems with simple, reliable solutions."
+          title: 'Intervue.io',
+          content: "At Intervue.io, I wasn’t just writing features — I was engineering systems that teams relied on every day. From designing workflow platforms to building automation pipelines that eliminated hours of manual effort, every project pushed me to solve complex problems with simple, reliable solutions."
         },
         1: {
-          title: 'Toddle, Associate Software Engineer',
-          content: "At Toddle, I realized that true impact comes from small refinements — the quiet details that transform a good experience into a great one."
+          title: 'Mycorr, Associate Software Engineer',
+          content: "At Mycorr, I realized that true impact comes from small refinements — the quiet details that transform a good experience into a great one."
         },
         2: {
-          title: 'Pepcoding',
-          content: "At Pepcoding, my first company, I discovered what it means to grow together. Beyond learning the craft of building products, it was where I found mentors, teammates, and friends for life. It taught me that the workplace is not just about code, but about people, collaboration, and shared journeys.\n\n❤️ pepcoding"
+          title: 'Datamingle',
+          content: "At Datamingle, my first company, I discovered what it means to grow together. Beyond learning the craft of building products, it was where I found mentors, teammates, and friends for life. It taught me that the workplace is not just about code, but about people, collaboration, and shared journeys.\n\n❤️ datamingle"
         }
       };
 
@@ -170,7 +170,7 @@
         // Set initial content for windows that have content
         Object.keys(windowContents).forEach(index => {
           const contentId = `content-${index}`;
-          const contentElement = document.getElementById(index === '0' ? 'particle41-content' : null);
+          const contentElement = document.getElementById(index === '0' ? 'intervue.io-content' : null);
 
           // If window has content and element exists, set it immediately (no typing animation)
           if (windowContents[index].content && contentElement && typedElements.has(contentId)) {
@@ -189,7 +189,7 @@
           return;
         }
 
-        const textElementIds = ['particle41-text', 'toddle-text', 'pepcoding-text'];
+        const textElementIds = ['intervue.io-text', 'mycorr-text', 'datamingle-text'];
 
         if (windowIndex >= 0 && windowIndex < textElementIds.length) {
           const textElement = document.getElementById(textElementIds[windowIndex]);
@@ -223,24 +223,24 @@
 
             // Special handling after content typing is complete
             if (windowIndex === 'content-1') {
-              // Show tildes cursor for Toddle after content typing completes
-              const toddleCursor = document.getElementById('toddle-cursor');
-              if (toddleCursor) {
-                toddleCursor.style.display = 'inline';
+              // Show tildes cursor for Mycorr after content typing completes
+              const mycorrCursor = document.getElementById('mycorr-cursor');
+              if (mycorrCursor) {
+                mycorrCursor.style.display = 'inline';
 
                 // Show date after cursor appears
                 setTimeout(() => {
-                  const toddleDate = document.getElementById('toddle-date');
-                  if (toddleDate) {
-                    toddleDate.style.display = 'inline';
+                  const mycorrDate = document.getElementById('mycorr-date');
+                  if (mycorrDate) {
+                    mycorrDate.style.display = 'inline';
                   }
                 }, 500);
               }
             } else if (windowIndex === 'content-2') {
-              // Show time for Pepcoding after content typing completes
-              const pepcodingTime = document.getElementById('pepcoding-time');
-              if (pepcodingTime) {
-                pepcodingTime.style.display = 'inline';
+              // Show time for Datamingle after content typing completes
+              const datamingleTime = document.getElementById('datamingle-time');
+              if (datamingleTime) {
+                datamingleTime.style.display = 'inline';
               }
             }
 
@@ -251,22 +251,22 @@
 
               // Get the right content element based on window index
               if (windowIndex === 0) {
-                contentElement = document.getElementById('particle41-content');
+                contentElement = document.getElementById('intervue.io-content');
               } else if (windowIndex === 1) {
-                contentElement = document.getElementById('toddle-content');
+                contentElement = document.getElementById('mycorr-content');
               } else if (windowIndex === 2) {
-                contentElement = document.getElementById('pepcoding-content');
+                contentElement = document.getElementById('datamingle-content');
               }
 
               if (contentElement && !typedElements.has(contentId)) {
-                // For Particle41, show avatar first, then type content
+                // For Intervue.io, show avatar first, then type content
                 if (windowIndex === 0) {
-                  const avatarWrapper = document.getElementById('particle41-avatar');
+                  const avatarWrapper = document.getElementById('intervue.io-avatar');
 
                   // First show the avatar with a fade-in effect
                   setTimeout(() => {
                     // Create and add the image
-                    avatarWrapper.innerHTML = '<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" src="./images/me.jpeg" style="color: transparent;">';
+                    avatarWrapper.innerHTML = '<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" src="./images/pfp.jpeg" style="color: transparent;">';
 
                     // Fade in the avatar
                     avatarWrapper.style.transition = 'opacity 0.3s ease-in';
@@ -280,14 +280,14 @@
                     }, 500);
                   }, 300);
                 } else if (windowIndex === 2) {
-                  // For Pepcoding, show response element first, then type content
-                  const pepcodingResponse = document.getElementById('pepcoding-response');
-                  if (pepcodingResponse) {
-                    pepcodingResponse.style.display = 'block';
+                  // For Datamingle, show response element first, then type content
+                  const datamingleResponse = document.getElementById('datamingle-response');
+                  if (datamingleResponse) {
+                    datamingleResponse.style.display = 'block';
 
                     // Fade in the element
                     setTimeout(() => {
-                      pepcodingResponse.style.opacity = '1';
+                      datamingleResponse.style.opacity = '1';
                     }, 10);
 
                     // Start typing content immediately after fade starts
