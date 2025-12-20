@@ -96,6 +96,7 @@
       const windows = [
         allALSOWindows[0],
         allALSOWindows[1],
+        allALSOWindows[2],
         datamingleWindow
       ];
 
@@ -157,8 +158,12 @@
           content: "At Mycorr, I realized that true impact comes from small refinements — the quiet details that transform a good experience into a great one."
         },
         2: {
+          title: 'CarbonCompete, Frontend Developer',
+         content: "At CarbonCompete, I focused on Scalable Application. Building scalable frontend architectures and ensuring a seamless user experience was my priority."
+        },
+        3: {
           title: 'Datamingle',
-          content: "At Datamingle, my first company, I discovered what it means to grow together. Beyond learning the craft of building products, it was where I found mentors, teammates, and friends for life. It taught me that the workplace is not just about code, but about people, collaboration, and shared journeys.\n\n❤️ datamingle"
+          content: "At Datamingle, my first company, my first company, I discovered what it means to grow together. Beyond learning the craft of building products, it was where I found mentors, teammates, and friends for life. It taught me that the workplace is not just about code, but about people, collaboration, and shared journeys.\n\n❤️ datamingle"
         }
       };
 
@@ -189,7 +194,7 @@
           return;
         }
 
-        const textElementIds = ['intervue.io-text', 'mycorr-text', 'datamingle-text'];
+        const textElementIds = ['intervue.io-text', 'mycorr-text','CarbonCompete-text', 'datamingle-text'];
 
         if (windowIndex >= 0 && windowIndex < textElementIds.length) {
           const textElement = document.getElementById(textElementIds[windowIndex]);
@@ -255,6 +260,8 @@
               } else if (windowIndex === 1) {
                 contentElement = document.getElementById('mycorr-content');
               } else if (windowIndex === 2) {
+               contentElement = document.getElementById('CarbonCompete-content');
+              }else if (windowIndex === 3) {
                 contentElement = document.getElementById('datamingle-content');
               }
 
@@ -279,7 +286,7 @@
                       typedElements.add(contentId);
                     }, 500);
                   }, 300);
-                } else if (windowIndex === 2) {
+                } else if (windowIndex === 3) {
                   // For Datamingle, show response element first, then type content
                   const datamingleResponse = document.getElementById('datamingle-response');
                   if (datamingleResponse) {
