@@ -398,7 +398,7 @@
 
     // Initialize Question Finder animation
     function initQuestionFinderAnimation() {
-      const questionFinderElement = document.getElementById('alsoarpit_question_finder');
+      const questionFinderElement = document.getElementById('alsoankit_question_finder');
       const discElement = document.querySelector('.ApiFig6_disc__zHSIe');
 
       if (questionFinderElement && discElement) {
@@ -424,7 +424,7 @@
 
     // Initialize Bundlwise section animation (adds classes once when visible)
     function initBundlwiseAnimation() {
-      const bundlwiseElement = document.getElementById('alsoarpit_bundlwise_section');
+      const bundlwiseElement = document.getElementById('alsoankit_bundlwise_section');
 
       if (bundlwiseElement) {
         let hasAnimated = false; // Flag to ensure animation happens only once
@@ -470,8 +470,8 @@
 
     // Initialize Ubuntu button cycling animation
     function initUbuntuButtonAnimations() {
-      const button1 = document.querySelector('.alsoarpit_ubuntu_button_1');
-      const button2 = document.querySelector('.alsoarpit_ubuntu_button_2');
+      const button1 = document.querySelector('.alsoankit_ubuntu_button_1');
+      const button2 = document.querySelector('.alsoankit_ubuntu_button_2');
 
       let animationInterval = null;
       let isAnimating = false;
