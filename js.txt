@@ -468,76 +468,7 @@
       }
     }
 
-    // Initialize Ubuntu button cycling animation
-    function initUbuntuButtonAnimations() {
-      const button1 = document.querySelector('.alsoankit_ubuntu_button_1');
-      const button2 = document.querySelector('.alsoankit_ubuntu_button_2');
-
-      let animationInterval = null;
-      let isAnimating = false;
-
-      const startAnimation = () => {
-        if (isAnimating) return;
-        isAnimating = true;
-
-        // Clear any existing animation
-        if (animationInterval) {
-          clearInterval(animationInterval);
-        }
-
-        // Set initial state - button1 active, button2 not active
-        button1.classList.add('ApiFig3_isActive__2YX3s');
-        button2.classList.remove('ApiFig3_isActive__2YX3s');
-
-
-        // Start the infinite cycling animation
-        animationInterval = setInterval(() => {
-          // Toggle classes - when button1 has active class, button2 should not, and vice versa
-          if (button1.classList.contains('ApiFig3_isActive__2YX3s')) {
-            // Remove from button1, add to button2
-            button1.classList.remove('ApiFig3_isActive__2YX3s');
-            button2.classList.add('ApiFig3_isActive__2YX3s');
-           
-          } else {
-            // Remove from button2, add to button1
-            button1.classList.add('ApiFig3_isActive__2YX3s');
-            button2.classList.remove('ApiFig3_isActive__2YX3s');
-          }
-        }, 2000);
-      };
-
-      const stopAnimation = () => {
-        if (animationInterval) {
-          clearInterval(animationInterval);
-          animationInterval = null;
-        }
-        isAnimating = false;
-        // Reset to initial state - button1 active, button2 not active
-        button1.classList.add('ApiFig3_isActive__2YX3s');
-        button2.classList.remove('ApiFig3_isActive__2YX3s');
-      };
-
-      // Observer for Ubuntu button container
-      const ubuntuContainer = document.getElementById('ubuntu_section');
-
-      if (ubuntuContainer) {
-        const ubuntuObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              startAnimation();
-            } else {
-              stopAnimation();
-            }
-          });
-        }, {
-          threshold: 0.3 // Trigger when 30% of the element is visible (more sensitive)
-        });
-
-        ubuntuObserver.observe(ubuntuContainer);
-      } else {
-      }
-    }
-
+  
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () {
         initDockFunctionality();
