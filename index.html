@@ -998,7 +998,7 @@
             class="APISection_dotted__sQr0_">
             <div class="APISection_caption__vFm6z">TaxOS_</div><!--$--><!--/$-->
             
-          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', 'SF Mono', Menlo, monospace">
+          <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', 'SF Mono', Menlo, monospace">
   <!--
     PALETTE (strict):
       #02193B  dark fill
@@ -1008,123 +1008,201 @@
   -->
 
   <!-- ============================================================= -->
-  <!-- TRAJECTORY ARC                                                -->
-  <!-- A single curve from bottom-left launch pad to top-right orbit -->
+  <!-- HEADER                                                        -->
   <!-- ============================================================= -->
-  <path d="M 120 480 Q 600 100 1080 140"
-        fill="none" stroke="#6A6B6C" stroke-width="1" stroke-dasharray="2 6" opacity="0.6"/>
+  <text x="70" y="90" font-size="22" fill="#6A6B6C" letter-spacing="5">FORM 1120</text>
+  <text x="70" y="160" font-size="68" fill="#63A1FF" letter-spacing="-0.5" font-weight="500">Acme Holdings</text>
+  <text x="70" y="200" font-size="22" fill="#6A6B6C" letter-spacing="1.5" opacity="0.75">Q1 2026 · Series A</text>
 
-  <!-- Active segment of the trajectory (solid blue up to current stage) -->
-  <path d="M 120 480 Q 360 290 600 220"
-        fill="none" stroke="#63A1FF" stroke-width="1.5"/>
+  <!-- ETA block top-right -->
+  <text x="1330" y="90" font-size="22" fill="#6A6B6C" letter-spacing="5" text-anchor="end">ETA</text>
+  <text x="1330" y="135" font-size="32" fill="#6A6B6C" letter-spacing="2" text-anchor="end">APR 28</text>
 
-  <!-- ============================================================= -->
-  <!-- LAUNCH PAD (bottom-left corner, subtle)                       -->
-  <!-- ============================================================= -->
-  <g transform="translate(120, 480)">
-    <line x1="-30" y1="0" x2="30" y2="0" stroke="#6A6B6C" stroke-width="1"/>
-    <line x1="-20" y1="0" x2="-25" y2="12" stroke="#6A6B6C" stroke-width="1"/>
-    <line x1="20" y1="0" x2="25" y2="12" stroke="#6A6B6C" stroke-width="1"/>
-  </g>
-
-  <!-- ============================================================= -->
-  <!-- STAGE MARKERS — 5 small circles along the arc                 -->
-  <!-- Calculated positions on the quadratic curve                   -->
-  <!-- ============================================================= -->
-
-  <!-- Stage 01 — done -->
-  <g transform="translate(235, 395)">
-    <circle r="6" fill="#63A1FF"/>
-    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2">01</text>
-    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5">INTAKE</text>
-  </g>
-
-  <!-- Stage 02 — done -->
-  <g transform="translate(410, 310)">
-    <circle r="6" fill="#63A1FF"/>
-    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2">02</text>
-    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5">AI PREP</text>
-  </g>
-
-  <!-- Stage 03 — ACTIVE (the rocket lives here) -->
-  <g transform="translate(600, 220)">
-    <!-- Pulse ring -->
-    <circle r="14" fill="none" stroke="#63A1FF" stroke-width="1">
-      <animate attributeName="r" values="14;28;14" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.2s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- The rocket (minimal: triangle body + fins + window) -->
-    <g>
-      <!-- Exhaust trail -->
-      <path d="M -4 20 L 0 34 L 4 20 Z" fill="#63A1FF" opacity="0.8">
-        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.6s" repeatCount="indefinite"/>
-      </path>
-      <path d="M -2 22 L 0 28 L 2 22 Z" fill="#63A1FF">
-        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="0.6s" repeatCount="indefinite"/>
-      </path>
-
-      <!-- Body: rocket pointed up -->
-      <path d="M 0 -24 L 8 -4 L 8 18 L -8 18 L -8 -4 Z"
-            fill="#02193B" stroke="#63A1FF" stroke-width="1.5"/>
-      <!-- Nose cone highlight -->
-      <path d="M 0 -24 L 8 -4 L -8 -4 Z" fill="#63A1FF"/>
-      <!-- Window (founder sees out) -->
-      <circle cx="0" cy="4" r="3" fill="#63A1FF"/>
-      <!-- Fins -->
-      <path d="M -8 12 L -14 20 L -8 20 Z" fill="#63A1FF"/>
-      <path d="M 8 12 L 14 20 L 8 20 Z" fill="#63A1FF"/>
-    </g>
-
-    <text x="0" y="-42" font-size="11" fill="#63A1FF" text-anchor="middle" letter-spacing="2">03</text>
-    <text x="0" y="58" font-size="14" fill="#63A1FF" text-anchor="middle" letter-spacing="1.5" font-weight="600">CPA REVIEW</text>
-  </g>
-
-  <!-- Stage 04 — pending -->
-  <g transform="translate(830, 170)">
-    <circle r="6" fill="none" stroke="#6A6B6C" stroke-width="1.5"/>
-    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2" opacity="0.6">04</text>
-    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5" opacity="0.7">APPROVAL</text>
-  </g>
-
-  <!-- Stage 05 — pending (the destination: orbit) -->
-  <g transform="translate(1080, 140)">
-    <circle r="6" fill="none" stroke="#6A6B6C" stroke-width="1.5"/>
-    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2" opacity="0.6">05</text>
-    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5" opacity="0.7">FILED</text>
-  </g>
-
-  <!-- ============================================================= -->
-  <!-- DESTINATION HINT — small orbit ring far top-right             -->
-  <!-- ============================================================= -->
-  <g transform="translate(1080, 140)">
-    <ellipse cx="0" cy="0" rx="32" ry="10" fill="none" stroke="#6A6B6C" stroke-width="0.8" opacity="0.4"/>
-  </g>
-
-  <!-- ============================================================= -->
-  <!-- MINIMAL HEADER (top-left)                                     -->
-  <!-- ============================================================= -->
-  <text x="60" y="90" font-size="13" fill="#6A6B6C" letter-spacing="4">FORM 1120</text>
-  <text x="60" y="140" font-size="42" fill="#63A1FF" letter-spacing="-0.5" font-weight="500">Acme Holdings</text>
-  <text x="60" y="170" font-size="14" fill="#6A6B6C" letter-spacing="1" opacity="0.7">Q1 2026 · Series A</text>
-
-  <!-- ============================================================= -->
-  <!-- THE NUMBER (bottom-left, the only heavy type element)         -->
-  <!-- ============================================================= -->
-  <text x="60" y="520" font-size="11" fill="#6A6B6C" letter-spacing="4">LIABILITY</text>
-  <text x="60" y="560" font-size="36" fill="#63A1FF" letter-spacing="-0.5" font-weight="500">$409,182</text>
-
-  <!-- ============================================================= -->
-  <!-- BOTTOM-RIGHT STATUS (minimal, balances the composition)       -->
-  <!-- ============================================================= -->
-  <text x="1140" y="500" font-size="11" fill="#6A6B6C" letter-spacing="4" text-anchor="end">ETA</text>
-  <text x="1140" y="528" font-size="18" fill="#6A6B6C" letter-spacing="2" text-anchor="end">APR 28</text>
-
-  <!-- Live indicator (offset below with breathing room) -->
-  <circle cx="1098" cy="560" r="3" fill="#63A1FF">
+  <circle cx="1256" cy="175" r="5" fill="#63A1FF">
     <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
   </circle>
-  <text x="1112" y="564" font-size="10" fill="#63A1FF" letter-spacing="2">LIVE</text>
+  <text x="1278" y="182" font-size="18" fill="#63A1FF" letter-spacing="3">LIVE</text>
+
+  <!-- ============================================================= -->
+  <!-- STEM — gently curving vertical line                           -->
+  <!-- ============================================================= -->
+  <!-- Full pending stem (dashed grey) -->
+  <path d="M 700 760 Q 720 600 700 470 Q 680 340 720 220 Q 740 130 720 70"
+        fill="none" stroke="#6A6B6C" stroke-width="1.8" stroke-dasharray="4 7" opacity="0.5"/>
+
+  <!-- Active stem (solid blue up through stage 3) -->
+  <path d="M 700 760 Q 720 600 700 470"
+        fill="none" stroke="#63A1FF" stroke-width="3"/>
+
+  <!-- ============================================================= -->
+  <!-- POT — LIABILITY (bottom, bigger)                              -->
+  <!-- ============================================================= -->
+  <g transform="translate(700, 800)">
+    <!-- Soil line -->
+    <line x1="-120" y1="-30" x2="120" y2="-30" stroke="#6A6B6C" stroke-width="1.5" opacity="0.6"/>
+    <!-- Soil dots -->
+    <circle cx="-90" cy="-27" r="2" fill="#6A6B6C" opacity="0.5"/>
+    <circle cx="-45" cy="-25" r="2" fill="#6A6B6C" opacity="0.5"/>
+    <circle cx="30" cy="-26" r="2" fill="#6A6B6C" opacity="0.5"/>
+    <circle cx="75" cy="-27" r="2" fill="#6A6B6C" opacity="0.5"/>
+
+    <!-- Pot trapezoid -->
+    <path d="M -85 -30 L 85 -30 L 70 60 L -70 60 Z"
+          fill="#02193B" stroke="#63A1FF" stroke-width="2"/>
+    <!-- Pot rim -->
+    <line x1="-85" y1="-15" x2="85" y2="-15" stroke="#63A1FF" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Liability text inside -->
+    <text x="0" y="15" font-size="18" fill="#6A6B6C" text-anchor="middle" letter-spacing="4">LIABILITY</text>
+    <text x="0" y="48" font-size="30" fill="#63A1FF" text-anchor="middle" font-weight="600" letter-spacing="-0.5">$409,182</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- STAGE 01 — INTAKE : SEEDLING                                  -->
+  <!-- ============================================================= -->
+  <g transform="translate(700, 720)">
+    <!-- Two cotyledon leaves -->
+    <ellipse cx="-22" cy="0" rx="22" ry="11" fill="#02193B" stroke="#63A1FF" stroke-width="2" transform="rotate(-25)"/>
+    <ellipse cx="22" cy="0" rx="22" ry="11" fill="#02193B" stroke="#63A1FF" stroke-width="2" transform="rotate(25)"/>
+    <!-- Connector node -->
+    <circle cx="0" cy="0" r="5" fill="#63A1FF"/>
+
+    <!-- Leader line to label -->
+    <line x1="55" y1="0" x2="180" y2="0" stroke="#6A6B6C" stroke-width="1" opacity="0.45"/>
+
+    <!-- Label -->
+    <text x="200" y="-14" font-size="20" fill="#6A6B6C" letter-spacing="4">01</text>
+    <text x="200" y="16" font-size="26" fill="#6A6B6C" letter-spacing="2" font-weight="500">INTAKE</text>
+    <text x="200" y="44" font-size="16" fill="#6A6B6C" letter-spacing="1.5" opacity="0.6">seed planted</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- STAGE 02 — AI PREP : SPARKLE-LEAF PLANT                       -->
+  <!-- ============================================================= -->
+  <g transform="translate(714, 585)">
+    <!-- Left sparkle-leaf -->
+    <g transform="translate(-40, 0) rotate(-35)">
+      <path d="M 0 -16 L 5 -5 L 16 0 L 5 5 L 0 16 L -5 5 L -16 0 L -5 -5 Z"
+            fill="#02193B" stroke="#63A1FF" stroke-width="1.8"/>
+    </g>
+    <!-- Right sparkle-leaf -->
+    <g transform="translate(40, -10) rotate(35)">
+      <path d="M 0 -18 L 5.5 -5.5 L 18 0 L 5.5 5.5 L 0 18 L -5.5 5.5 L -18 0 L -5.5 -5.5 Z"
+            fill="#02193B" stroke="#63A1FF" stroke-width="1.8"/>
+    </g>
+    <!-- Central rotating sparkle -->
+    <g transform="translate(0, 22)">
+      <path d="M 0 -7 L 2 -2 L 7 0 L 2 2 L 0 7 L -2 2 L -7 0 L -2 -2 Z" fill="#63A1FF">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <!-- Connector node -->
+    <circle cx="0" cy="0" r="5" fill="#63A1FF"/>
+
+    <line x1="70" y1="-10" x2="180" y2="-10" stroke="#6A6B6C" stroke-width="1" opacity="0.45"/>
+
+    <text x="200" y="-24" font-size="20" fill="#6A6B6C" letter-spacing="4">02</text>
+    <text x="200" y="6" font-size="26" fill="#6A6B6C" letter-spacing="2" font-weight="500">AI PREP</text>
+    <text x="200" y="34" font-size="16" fill="#6A6B6C" letter-spacing="1.5" opacity="0.6">auto-drafting</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- STAGE 03 — CPA REVIEW : MATURE PLANT + MAGNIFIER (active)     -->
+  <!-- ============================================================= -->
+  <g transform="translate(700, 470)">
+    <!-- Pulse ring -->
+    <circle r="70" fill="none" stroke="#63A1FF" stroke-width="1.2" opacity="0.4">
+      <animate attributeName="r" values="60;90;60" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Leaves -->
+    <g transform="translate(-44, -6) rotate(-40)">
+      <path d="M 0 0 Q 16 -20 34 -12 Q 28 6 0 0 Z"
+            fill="#02193B" stroke="#63A1FF" stroke-width="2"/>
+      <path d="M 3 -3 L 28 -10" stroke="#63A1FF" stroke-width="0.8" opacity="0.7"/>
+    </g>
+    <g transform="translate(44, -15) rotate(40)">
+      <path d="M 0 0 Q -16 -20 -34 -12 Q -28 6 0 0 Z"
+            fill="#02193B" stroke="#63A1FF" stroke-width="2"/>
+      <path d="M -3 -3 L -28 -10" stroke="#63A1FF" stroke-width="0.8" opacity="0.7"/>
+    </g>
+    <!-- Top small leaf -->
+    <g transform="translate(-6, -32) rotate(-15)">
+      <ellipse cx="0" cy="0" rx="12" ry="6" fill="#02193B" stroke="#63A1FF" stroke-width="1.6"/>
+    </g>
+
+    <!-- Magnifying glass -->
+    <g transform="translate(68, -26)">
+      <circle cx="0" cy="0" r="22" fill="none" stroke="#63A1FF" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="16" fill="#02193B" opacity="0.4"/>
+      <line x1="16" y1="16" x2="32" y2="32" stroke="#63A1FF" stroke-width="4" stroke-linecap="round"/>
+      <!-- Check inside lens -->
+      <path d="M -6 0 L -1 5 L 6 -4" stroke="#63A1FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Connector node -->
+    <circle cx="0" cy="0" r="6" fill="#63A1FF"/>
+
+    <line x1="105" y1="0" x2="180" y2="0" stroke="#63A1FF" stroke-width="1.5"/>
+
+    <text x="200" y="-14" font-size="20" fill="#63A1FF" letter-spacing="4" font-weight="600">03</text>
+    <text x="200" y="20" font-size="32" fill="#63A1FF" letter-spacing="2" font-weight="600">CPA REVIEW</text>
+    <text x="200" y="50" font-size="17" fill="#63A1FF" letter-spacing="1.5">in progress · apr 16</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- STAGE 04 — APPROVAL : BUD                                     -->
+  <!-- ============================================================= -->
+  <g transform="translate(716, 310)">
+    <!-- Supporting leaves -->
+    <ellipse cx="-26" cy="30" rx="16" ry="7" fill="none" stroke="#6A6B6C" stroke-width="1.8" transform="rotate(-30, -26, 30)"/>
+    <ellipse cx="26" cy="35" rx="16" ry="7" fill="none" stroke="#6A6B6C" stroke-width="1.8" transform="rotate(30, 26, 35)"/>
+
+    <!-- Closed bud (teardrop) -->
+    <path d="M 0 -34 Q -20 -16 -17 8 Q 0 20 17 8 Q 20 -16 0 -34 Z"
+          fill="none" stroke="#6A6B6C" stroke-width="2.2"/>
+    <!-- Inner petal hints -->
+    <path d="M -17 8 Q 0 0 17 8" stroke="#6A6B6C" stroke-width="1.2" fill="none" opacity="0.65"/>
+    <path d="M -10 -16 Q 0 -13 10 -16" stroke="#6A6B6C" stroke-width="1.2" fill="none" opacity="0.65"/>
+    <!-- Sepals -->
+    <path d="M -17 8 L -11 20 M 17 8 L 11 20 M 0 14 L 0 24" stroke="#6A6B6C" stroke-width="1.2"/>
+
+    <!-- Connector node -->
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#6A6B6C" stroke-width="2"/>
+
+    <line x1="35" y1="0" x2="180" y2="0" stroke="#6A6B6C" stroke-width="1" opacity="0.35" stroke-dasharray="3 4"/>
+
+    <text x="200" y="-14" font-size="20" fill="#6A6B6C" letter-spacing="4" opacity="0.75">04</text>
+    <text x="200" y="16" font-size="26" fill="#6A6B6C" letter-spacing="2" opacity="0.8" font-weight="500">APPROVAL</text>
+    <text x="200" y="44" font-size="16" fill="#6A6B6C" letter-spacing="1.5" opacity="0.5">founder · awaiting</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- STAGE 05 — FILED : OPEN FLOWER                                -->
+  <!-- ============================================================= -->
+  <g transform="translate(726, 130)">
+    <!-- 8 petals radiating -->
+    <g fill="none" stroke="#6A6B6C" stroke-width="2.2">
+      <ellipse cx="0" cy="-30" rx="12" ry="22"/>
+      <ellipse cx="0" cy="30" rx="12" ry="22"/>
+      <ellipse cx="-30" cy="0" rx="22" ry="12"/>
+      <ellipse cx="30" cy="0" rx="22" ry="12"/>
+      <ellipse cx="-21" cy="-21" rx="12" ry="22" transform="rotate(-45, -21, -21)"/>
+      <ellipse cx="21" cy="-21" rx="12" ry="22" transform="rotate(45, 21, -21)"/>
+      <ellipse cx="-21" cy="21" rx="12" ry="22" transform="rotate(45, -21, 21)"/>
+      <ellipse cx="21" cy="21" rx="12" ry="22" transform="rotate(-45, 21, 21)"/>
+    </g>
+    <!-- Flower center -->
+    <circle r="11" fill="none" stroke="#6A6B6C" stroke-width="2.2"/>
+    <circle r="4" fill="#6A6B6C" opacity="0.8"/>
+
+    <line x1="62" y1="0" x2="170" y2="0" stroke="#6A6B6C" stroke-width="1" opacity="0.35" stroke-dasharray="3 4"/>
+
+    <text x="190" y="-14" font-size="20" fill="#6A6B6C" letter-spacing="4" opacity="0.75">05</text>
+    <text x="190" y="16" font-size="26" fill="#6A6B6C" letter-spacing="2" opacity="0.8" font-weight="500">FILED</text>
+    <text x="190" y="44" font-size="16" fill="#6A6B6C" letter-spacing="1.5" opacity="0.5">target · apr 28</text>
+  </g>
 </svg>
           </div><a class="APISection_col__p1cjB APISection_colLink__AmOri"
             style="--grid-lg-area:6 / 4;--grid-md-area:6 / 3;--grid-area:8 / 2"
