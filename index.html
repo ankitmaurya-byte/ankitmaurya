@@ -996,416 +996,139 @@
           </div>
           <div style="--grid-lg-area:6 / 2 / span 1 / span 2;--grid-md-area:6 / 2;--grid-area:7 / 2"
             class="APISection_dotted__sQr0_">
-            <div class="APISection_caption__vFm6z">TaxOS_</div><!--$--><!--/$--><svg width="1200" height="400" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <!-- Transparent background -->
+            <div class="APISection_caption__vFm6z">TaxOS_</div><!--$--><!--/$-->
+            
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', 'SF Mono', Menlo, monospace">
+  <!--
+    PALETTE (strict):
+      #02193B  dark fill
+      #63A1FF  accent
+      #6A6B6C  grey
+    Background: transparent.
+  -->
 
-  <!-- ============================================ -->
-  <!-- LEFT SIDEBAR                                 -->
-  <!-- ============================================ -->
-  <g stroke="#E5E7EB" stroke-width="1.5" fill="none">
-    <rect x="20" y="20" width="200" height="660" rx="4"/>
+  <!-- ============================================================= -->
+  <!-- TRAJECTORY ARC                                                -->
+  <!-- A single curve from bottom-left launch pad to top-right orbit -->
+  <!-- ============================================================= -->
+  <path d="M 120 480 Q 600 100 1080 140"
+        fill="none" stroke="#6A6B6C" stroke-width="1" stroke-dasharray="2 6" opacity="0.6"/>
 
-    <rect x="40" y="40" width="20" height="20" rx="4"/>
-    <line x1="70" y1="50" x2="140" y2="50" stroke-width="2.5"/>
-    <line x1="70" y1="58" x2="110" y2="58" opacity="0.5"/>
+  <!-- Active segment of the trajectory (solid blue up to current stage) -->
+  <path d="M 120 480 Q 360 290 600 220"
+        fill="none" stroke="#63A1FF" stroke-width="1.5"/>
 
-    <line x1="20" y1="85" x2="220" y2="85" opacity="0.3"/>
+  <!-- ============================================================= -->
+  <!-- LAUNCH PAD (bottom-left corner, subtle)                       -->
+  <!-- ============================================================= -->
+  <g transform="translate(120, 480)">
+    <line x1="-30" y1="0" x2="30" y2="0" stroke="#6A6B6C" stroke-width="1"/>
+    <line x1="-20" y1="0" x2="-25" y2="12" stroke="#6A6B6C" stroke-width="1"/>
+    <line x1="20" y1="0" x2="25" y2="12" stroke="#6A6B6C" stroke-width="1"/>
+  </g>
 
+  <!-- ============================================================= -->
+  <!-- STAGE MARKERS — 5 small circles along the arc                 -->
+  <!-- Calculated positions on the quadratic curve                   -->
+  <!-- ============================================================= -->
+
+  <!-- Stage 01 — done -->
+  <g transform="translate(235, 395)">
+    <circle r="6" fill="#63A1FF"/>
+    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2">01</text>
+    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5">INTAKE</text>
+  </g>
+
+  <!-- Stage 02 — done -->
+  <g transform="translate(410, 310)">
+    <circle r="6" fill="#63A1FF"/>
+    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2">02</text>
+    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5">AI PREP</text>
+  </g>
+
+  <!-- Stage 03 — ACTIVE (the rocket lives here) -->
+  <g transform="translate(600, 220)">
+    <!-- Pulse ring -->
+    <circle r="14" fill="none" stroke="#63A1FF" stroke-width="1">
+      <animate attributeName="r" values="14;28;14" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- The rocket (minimal: triangle body + fins + window) -->
     <g>
-      <rect x="35" y="105" width="14" height="14" rx="2"/>
-      <line x1="60" y1="112" x2="140" y2="112" stroke-width="2"/>
-
-      <rect x="35" y="135" width="14" height="14" rx="2"/>
-      <line x1="60" y1="142" x2="150" y2="142" stroke-width="2"/>
-
-      <!-- Active item - highlighted in blue accent -->
-      <rect x="30" y="162" width="180" height="24" rx="4" stroke="#3B82F6" stroke-width="2"/>
-      <rect x="35" y="168" width="14" height="14" rx="2" stroke="#3B82F6" stroke-width="2"/>
-      <line x1="60" y1="175" x2="170" y2="175" stroke="#3B82F6" stroke-width="2"/>
-
-      <rect x="35" y="198" width="14" height="14" rx="2"/>
-      <line x1="60" y1="205" x2="130" y2="205" stroke-width="2"/>
-
-      <rect x="35" y="228" width="14" height="14" rx="2"/>
-      <line x1="60" y1="235" x2="145" y2="235" stroke-width="2"/>
-
-      <rect x="35" y="258" width="14" height="14" rx="2"/>
-      <line x1="60" y1="265" x2="125" y2="265" stroke-width="2"/>
-
-      <rect x="35" y="288" width="14" height="14" rx="2"/>
-      <line x1="60" y1="295" x2="155" y2="295" stroke-width="2"/>
-
-      <rect x="35" y="318" width="14" height="14" rx="2"/>
-      <line x1="60" y1="325" x2="135" y2="325" stroke-width="2"/>
-
-      <rect x="35" y="348" width="14" height="14" rx="2"/>
-      <line x1="60" y1="355" x2="145" y2="355" stroke-width="2"/>
-
-      <rect x="35" y="378" width="14" height="14" rx="2"/>
-      <line x1="60" y1="385" x2="140" y2="385" stroke-width="2"/>
-
-      <rect x="35" y="408" width="14" height="14" rx="2"/>
-      <line x1="60" y1="415" x2="150" y2="415" stroke-width="2"/>
-
-      <rect x="35" y="438" width="14" height="14" rx="2"/>
-      <line x1="60" y1="445" x2="130" y2="445" stroke-width="2"/>
-
-      <rect x="35" y="468" width="14" height="14" rx="2"/>
-      <line x1="60" y1="475" x2="125" y2="475" stroke-width="2"/>
-    </g>
-
-    <!-- User profile -->
-    <line x1="20" y1="620" x2="220" y2="620" opacity="0.3"/>
-    <circle cx="45" cy="650" r="14"/>
-    <line x1="70" y1="645" x2="140" y2="645" stroke-width="2"/>
-    <line x1="70" y1="655" x2="110" y2="655" opacity="0.5"/>
-  </g>
-
-  <!-- ============================================ -->
-  <!-- TOP NAVBAR                                   -->
-  <!-- ============================================ -->
-  <g stroke="#E5E7EB" stroke-width="1.5" fill="none">
-    <rect x="240" y="20" width="940" height="50" rx="4"/>
-    <rect x="260" y="35" width="20" height="20" rx="3"/>
-    <circle cx="305" cy="45" r="2.5"/>
-    <line x1="315" y1="45" x2="340" y2="45" opacity="0.5"/>
-    <rect x="970" y="35" width="80" height="22" rx="11"/>
-    <rect x="1060" y="35" width="80" height="22" rx="11" stroke="#3B82F6" stroke-width="2"/>
-    <circle cx="1160" cy="46" r="8"/>
-  </g>
-
-  <!-- ============================================ -->
-  <!-- MAIN CONTENT HEADER                          -->
-  <!-- ============================================ -->
-  <g stroke="#E5E7EB" stroke-width="1.5" fill="none">
-    <line x1="260" y1="100" x2="300" y2="100" opacity="0.4"/>
-    <line x1="305" y1="100" x2="310" y2="100" opacity="0.4"/>
-    <line x1="315" y1="100" x2="370" y2="100" opacity="0.4"/>
-    <line x1="375" y1="100" x2="380" y2="100" opacity="0.4"/>
-    <line x1="385" y1="100" x2="410" y2="100" opacity="0.4"/>
-
-    <line x1="260" y1="130" x2="580" y2="130" stroke-width="4"/>
-
-    <!-- Status pill with blue accent -->
-    <rect x="600" y="118" width="90" height="24" rx="12" stroke="#3B82F6" stroke-width="2"/>
-    <circle cx="615" cy="130" r="3" fill="#3B82F6"/>
-    <line x1="625" y1="130" x2="680" y2="130" stroke="#3B82F6" stroke-width="2"/>
-  </g>
-
-  <!-- ============================================ -->
-  <!-- WORKFLOW STEPPER WITH LABELS                 -->
-  <!-- ============================================ -->
-  <g>
-    <rect x="260" y="180" width="180" height="320" rx="6" stroke="#E5E7EB" stroke-width="1.5" fill="none"/>
-
-    <!-- Vertical base line -->
-    <line x1="290" y1="220" x2="290" y2="460" stroke="#E5E7EB" stroke-width="2" opacity="0.25"/>
-
-    <!-- Animated progress line -->
-    <line x1="290" y1="220" x2="290" y2="220" stroke="#3B82F6" stroke-width="2.5">
-      <animate attributeName="y2" 
-               values="220;260;260;300;300;340;340;380;380;460;460;220" 
-               keyTimes="0;0.08;0.18;0.26;0.36;0.44;0.54;0.62;0.72;0.85;0.95;1"
-               dur="10s" 
-               repeatCount="indefinite"/>
-    </line>
-
-    <!-- ============ STEP 1: INTAKE ============ -->
-    <g>
-      <circle cx="290" cy="220" r="11" stroke="#E5E7EB" stroke-width="1.8" fill="none"/>
-      <circle cx="290" cy="220" r="13" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;1;1;0;0;0;0;0;0;0;0;0" 
-                 keyTimes="0;0.02;0.08;0.12;0.2;0.3;0.4;0.5;0.6;0.8;0.9;1"
-                 dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="r" 
-                 values="11;16;13;11" 
-                 keyTimes="0;0.03;0.08;0.12"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-      <path d="M 285 220 L 288 223 L 295 216" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;1;1;1;1;1;1;1;1;1;0" 
-                 keyTimes="0;0.07;0.09;0.1;0.2;0.3;0.4;0.5;0.6;0.8;0.99;1"
-                 dur="10s" repeatCount="indefinite"/>
+      <!-- Exhaust trail -->
+      <path d="M -4 20 L 0 34 L 4 20 Z" fill="#63A1FF" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M -2 22 L 0 28 L 2 22 Z" fill="#63A1FF">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="0.6s" repeatCount="indefinite"/>
       </path>
 
-      <g font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">
-        <text x="310" y="218" fill="#E5E7EB">INTAKE</text>
-        <text x="310" y="230" fill="#6B7280" font-size="8" font-weight="400" letter-spacing="0.5">Data collection</text>
-      </g>
+      <!-- Body: rocket pointed up -->
+      <path d="M 0 -24 L 8 -4 L 8 18 L -8 18 L -8 -4 Z"
+            fill="#02193B" stroke="#63A1FF" stroke-width="1.5"/>
+      <!-- Nose cone highlight -->
+      <path d="M 0 -24 L 8 -4 L -8 -4 Z" fill="#63A1FF"/>
+      <!-- Window (founder sees out) -->
+      <circle cx="0" cy="4" r="3" fill="#63A1FF"/>
+      <!-- Fins -->
+      <path d="M -8 12 L -14 20 L -8 20 Z" fill="#63A1FF"/>
+      <path d="M 8 12 L 14 20 L 8 20 Z" fill="#63A1FF"/>
     </g>
 
-    <!-- ============ STEP 2: AI PREP ============ -->
-    <g>
-      <circle cx="290" cy="300" r="11" stroke="#E5E7EB" stroke-width="1.8" fill="none"/>
-      <circle cx="290" cy="300" r="13" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;1;1;0;0;0;0;0;0" 
-                 keyTimes="0;0.08;0.18;0.2;0.22;0.28;0.32;0.4;0.5;0.7;0.9;1"
-                 dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="r" 
-                 values="11;11;16;13;11" 
-                 keyTimes="0;0.18;0.22;0.28;0.32"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-      <path d="M 285 300 L 288 303 L 295 296" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;1;1;1;1;1;0" 
-                 keyTimes="0;0.1;0.2;0.25;0.27;0.29;0.31;0.4;0.5;0.8;0.99;1"
-                 dur="10s" repeatCount="indefinite"/>
-      </path>
-
-      <g font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">
-        <text x="310" y="298" fill="#E5E7EB">AI PREP</text>
-        <text x="310" y="310" fill="#6B7280" font-size="8" font-weight="400" letter-spacing="0.5">Auto-fill filing</text>
-      </g>
-    </g>
-
-    <!-- ============ STEP 3: CPA ============ -->
-    <g>
-      <circle cx="290" cy="340" r="11" stroke="#E5E7EB" stroke-width="1.8" fill="none"/>
-      <circle cx="290" cy="340" r="13" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;1;1;0;0;0" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.44;0.46;0.48;0.54;0.6;0.9;1"
-                 dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="r" 
-                 values="11;11;16;13;11" 
-                 keyTimes="0;0.44;0.48;0.54;0.58"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-      <path d="M 285 340 L 288 343 L 295 336" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0;1;1;0" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.45;0.5;0.53;0.56;0.58;0.99;1"
-                 dur="10s" repeatCount="indefinite"/>
-      </path>
-
-      <g font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">
-        <text x="310" y="338" fill="#E5E7EB">CPA</text>
-        <text x="310" y="350" fill="#6B7280" font-size="8" font-weight="400" letter-spacing="0.5">Expert review</text>
-      </g>
-    </g>
-
-    <!-- ============ STEP 4: FOUNDER ============ -->
-    <g>
-      <circle cx="290" cy="380" r="11" stroke="#E5E7EB" stroke-width="1.8" fill="none"/>
-      <circle cx="290" cy="380" r="13" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0;1;1;0" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.58;0.6;0.62;0.68;0.74;0.78"
-                 dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="r" 
-                 values="11;11;16;13;11" 
-                 keyTimes="0;0.6;0.65;0.72;0.78"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-      <path d="M 285 380 L 288 383 L 295 376" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0;0;1;0" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.65;0.7;0.74;0.99;1"
-                 dur="10s" repeatCount="indefinite"/>
-      </path>
-
-      <g font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">
-        <text x="310" y="378" fill="#E5E7EB">FOUNDER</text>
-        <text x="310" y="390" fill="#6B7280" font-size="8" font-weight="400" letter-spacing="0.5">Final approval</text>
-      </g>
-    </g>
-
-    <!-- ============ STEP 5: SUBMITTED ============ -->
-    <g>
-      <circle cx="290" cy="460" r="14" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0;0;1;1" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.85;0.88;1"
-                 dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="r" 
-                 values="11;11;18;14" 
-                 keyTimes="0;0.85;0.9;0.95"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="290" cy="460" r="18" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0">
-        <animate attributeName="r" 
-                 values="14;22;14" 
-                 keyTimes="0;0.5;1"
-                 dur="2s" 
-                 begin="9s"
-                 repeatCount="indefinite"/>
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0.7;0;0.7;0.7" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.88;0.92;0.96;1"
-                 dur="10s" 
-                 repeatCount="indefinite"/>
-      </circle>
-      <circle cx="290" cy="460" r="11" stroke="#E5E7EB" stroke-width="1.8" fill="none"/>
-      <circle cx="290" cy="460" r="5" fill="#3B82F6" stroke="none" opacity="0">
-        <animate attributeName="opacity" 
-                 values="0;0;0;0;0;0;0;0;0;0;1;1" 
-                 keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.87;0.9;1"
-                 dur="10s" repeatCount="indefinite"/>
-      </circle>
-
-      <g font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">
-        <text x="310" y="458" fill="#E5E7EB">SUBMITTED</text>
-        <text x="310" y="470" fill="#6B7280" font-size="8" font-weight="400" letter-spacing="0.5">Filed with IRS</text>
-      </g>
-    </g>
-
-    <!-- Traveling packet -->
-    <circle cx="290" r="4" fill="#3B82F6" stroke="#BFDBFE" stroke-width="0.8">
-      <animate attributeName="cy" 
-               values="220;260;300;340;380;460;220" 
-               keyTimes="0;0.18;0.32;0.48;0.62;0.85;1"
-               dur="10s" 
-               repeatCount="indefinite"/>
-      <animate attributeName="opacity" 
-               values="0;1;1;1;1;1;1;1;0" 
-               keyTimes="0;0.03;0.1;0.2;0.4;0.6;0.8;0.9;1"
-               dur="10s" 
-               repeatCount="indefinite"/>
-    </circle>
+    <text x="0" y="-42" font-size="11" fill="#63A1FF" text-anchor="middle" letter-spacing="2">03</text>
+    <text x="0" y="58" font-size="14" fill="#63A1FF" text-anchor="middle" letter-spacing="1.5" font-weight="600">CPA REVIEW</text>
   </g>
 
-  <!-- ============================================ -->
-  <!-- AI CONVERSATION PANEL                        -->
-  <!-- ============================================ -->
-  <g stroke="#E5E7EB" stroke-width="1.5" fill="none">
-    <rect x="460" y="180" width="400" height="480" rx="6"/>
-
-    <line x1="480" y1="210" x2="600" y2="210" stroke-width="3"/>
-
-    <!-- Message 1 (AI) -->
-    <rect x="480" y="235" width="360" height="60" rx="6"/>
-    <line x1="495" y1="250" x2="550" y2="250" stroke-width="2"/>
-    <line x1="495" y1="265" x2="820" y2="265" opacity="0.7"/>
-    <line x1="495" y1="278" x2="790" y2="278" opacity="0.7"/>
-
-    <!-- Message 2 (user) -->
-    <rect x="540" y="310" width="300" height="44" rx="6" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="555" y1="325" x2="585" y2="325" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="555" y1="340" x2="820" y2="340" stroke="#3B82F6" opacity="0.7"/>
-
-    <!-- Message 3 (AI) -->
-    <rect x="480" y="375" width="360" height="60" rx="6"/>
-    <line x1="495" y1="390" x2="550" y2="390" stroke-width="2"/>
-    <line x1="495" y1="405" x2="820" y2="405" opacity="0.7"/>
-    <line x1="495" y1="418" x2="790" y2="418" opacity="0.7"/>
-
-    <!-- Typing dots -->
-    <circle cx="800" cy="418" r="2.5" fill="#3B82F6" stroke="none">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="810" cy="418" r="2.5" fill="#3B82F6" stroke="none">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="820" cy="418" r="2.5" fill="#3B82F6" stroke="none">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.2s" begin="0.4s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Message 4 (user) -->
-    <rect x="540" y="450" width="300" height="44" rx="6" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="555" y1="465" x2="585" y2="465" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="555" y1="480" x2="820" y2="480" stroke="#3B82F6" opacity="0.7"/>
-
-    <!-- Message 5 (streaming AI) -->
-    <rect x="480" y="515" width="360" height="50" rx="6" stroke-dasharray="4,3">
-      <animate attributeName="stroke-dashoffset" values="0;-14" dur="1.5s" repeatCount="indefinite"/>
-    </rect>
-    <line x1="495" y1="535" x2="550" y2="535" stroke-width="2"/>
-    <line x1="495" y1="550" x2="750" y2="550" opacity="0.5">
-      <animate attributeName="x2" values="550;820;550" dur="3s" repeatCount="indefinite"/>
-    </line>
-
-    <!-- Input field -->
-    <rect x="480" y="595" width="360" height="40" rx="20"/>
-    <line x1="500" y1="615" x2="700" y2="615" opacity="0.4"/>
-    <circle cx="820" cy="615" r="10" stroke="#3B82F6" stroke-width="2"/>
-    <path d="M 817 615 L 821 615 M 819 613 L 823 615 L 819 617" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Stage 04 — pending -->
+  <g transform="translate(830, 170)">
+    <circle r="6" fill="none" stroke="#6A6B6C" stroke-width="1.5"/>
+    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2" opacity="0.6">04</text>
+    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5" opacity="0.7">APPROVAL</text>
   </g>
 
-  <!-- ============================================ -->
-  <!-- FORM PREVIEW PANEL                           -->
-  <!-- ============================================ -->
-  <g stroke="#E5E7EB" stroke-width="1.5" fill="none">
-    <rect x="880" y="180" width="300" height="480" rx="6"/>
-
-    <line x1="900" y1="210" x2="1000" y2="210" stroke-width="3"/>
-
-    <rect x="1040" y="198" width="120" height="22" rx="11" stroke="#3B82F6" stroke-width="2" stroke-dasharray="3,2">
-      <animate attributeName="stroke-dashoffset" values="0;-10" dur="2s" repeatCount="indefinite"/>
-    </rect>
-    <circle cx="1055" cy="209" r="3" fill="#3B82F6" stroke="none">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
-    </circle>
-    <line x1="1065" y1="209" x2="1150" y2="209" stroke="#3B82F6" stroke-width="1.5"/>
-
-    <!-- AI Summary -->
-    <rect x="900" y="240" width="260" height="80" rx="6" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="915" y1="260" x2="990" y2="260" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="915" y1="278" x2="1140" y2="278" stroke="#3B82F6" opacity="0.6"/>
-    <line x1="915" y1="292" x2="1100" y2="292" stroke="#3B82F6" opacity="0.6"/>
-    <line x1="915" y1="306" x2="1120" y2="306" stroke="#3B82F6" opacity="0.6"/>
-
-    <!-- AI Reasoning -->
-    <rect x="900" y="340" width="260" height="100" rx="6"/>
-    <line x1="915" y1="360" x2="1005" y2="360" stroke-width="2"/>
-    <line x1="915" y1="378" x2="1140" y2="378" opacity="0.7"/>
-    <line x1="915" y1="392" x2="1130" y2="392" opacity="0.7"/>
-    <line x1="915" y1="406" x2="1110" y2="406" opacity="0.7"/>
-    <line x1="915" y1="420" x2="1050" y2="420" opacity="0.7"/>
-
-    <!-- Filing Data -->
-    <line x1="900" y1="465" x2="990" y2="465" stroke-width="2.5"/>
-
-    <rect x="900" y="480" width="260" height="30" rx="4" stroke-opacity="0.6"/>
-    <line x1="915" y1="495" x2="975" y2="495" stroke-width="2"/>
-
-    <rect x="900" y="515" width="260" height="32" rx="4" stroke-opacity="0.3"/>
-    <line x1="915" y1="531" x2="960" y2="531" opacity="0.7"/>
-    <line x1="1100" y1="531" x2="1150" y2="531" stroke-width="2"/>
-
-    <rect x="900" y="552" width="260" height="32" rx="4" stroke-opacity="0.3"/>
-    <line x1="915" y1="568" x2="980" y2="568" opacity="0.7"/>
-    <rect x="1070" y="564" width="80" height="6" rx="3" stroke-opacity="0.4"/>
-    <rect x="1070" y="564" width="65" height="6" rx="3" fill="#3B82F6" stroke="none">
-      <animate attributeName="width" values="60;68;60" dur="3s" repeatCount="indefinite"/>
-    </rect>
-
-    <rect x="900" y="589" width="260" height="32" rx="4" stroke-opacity="0.3"/>
-    <line x1="915" y1="605" x2="960" y2="605" opacity="0.7"/>
-    <line x1="1080" y1="605" x2="1150" y2="605" stroke-width="2"/>
-
-    <rect x="900" y="626" width="260" height="26" rx="4" stroke-opacity="0.3"/>
-    <line x1="915" y1="640" x2="960" y2="640" opacity="0.5"/>
-    <line x1="1090" y1="640" x2="1150" y2="640" opacity="0.5"/>
+  <!-- Stage 05 — pending (the destination: orbit) -->
+  <g transform="translate(1080, 140)">
+    <circle r="6" fill="none" stroke="#6A6B6C" stroke-width="1.5"/>
+    <text x="0" y="-18" font-size="11" fill="#6A6B6C" text-anchor="middle" letter-spacing="2" opacity="0.6">05</text>
+    <text x="0" y="28" font-size="12" fill="#6A6B6C" text-anchor="middle" letter-spacing="1.5" opacity="0.7">FILED</text>
   </g>
 
-  <!-- ============================================ -->
-  <!-- CROSS-PANEL DATA FLOW PARTICLES             -->
-  <!-- ============================================ -->
-  <circle r="3.5" fill="#3B82F6">
-    <animateMotion dur="3.5s" begin="0.5s" repeatCount="indefinite" 
-                   path="M 440,300 Q 450,340 460,395"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+  <!-- ============================================================= -->
+  <!-- DESTINATION HINT — small orbit ring far top-right             -->
+  <!-- ============================================================= -->
+  <g transform="translate(1080, 140)">
+    <ellipse cx="0" cy="0" rx="32" ry="10" fill="none" stroke="#6A6B6C" stroke-width="0.8" opacity="0.4"/>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- MINIMAL HEADER (top-left)                                     -->
+  <!-- ============================================================= -->
+  <text x="60" y="90" font-size="13" fill="#6A6B6C" letter-spacing="4">FORM 1120</text>
+  <text x="60" y="140" font-size="42" fill="#63A1FF" letter-spacing="-0.5" font-weight="500">Acme Holdings</text>
+  <text x="60" y="170" font-size="14" fill="#6A6B6C" letter-spacing="1" opacity="0.7">Q1 2026 · Series A</text>
+
+  <!-- ============================================================= -->
+  <!-- THE NUMBER (bottom-left, the only heavy type element)         -->
+  <!-- ============================================================= -->
+  <text x="60" y="520" font-size="11" fill="#6A6B6C" letter-spacing="4">LIABILITY</text>
+  <text x="60" y="560" font-size="36" fill="#63A1FF" letter-spacing="-0.5" font-weight="500">$409,182</text>
+
+  <!-- ============================================================= -->
+  <!-- BOTTOM-RIGHT STATUS (minimal, balances the composition)       -->
+  <!-- ============================================================= -->
+  <text x="1140" y="520" font-size="11" fill="#6A6B6C" letter-spacing="4" text-anchor="end">ETA</text>
+  <text x="1140" y="548" font-size="18" fill="#6A6B6C" letter-spacing="2" text-anchor="end">APR 28</text>
+
+  <!-- Live indicator -->
+  <circle cx="1078" cy="543" r="3" fill="#63A1FF">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
   </circle>
-
-  <circle r="3.5" fill="#3B82F6">
-    <animateMotion dur="3s" repeatCount="indefinite" 
-                   path="M 840,405 Q 865,330 900,280"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
-  </circle>
-
-  <circle r="3" fill="#BFDBFE">
-    <animateMotion dur="4s" begin="2s" repeatCount="indefinite" 
-                   path="M 880,450 Q 660,550 440,460"/>
-    <animate attributeName="opacity" values="0;0.8;0.8;0" dur="4s" begin="2s" repeatCount="indefinite"/>
-  </circle>
+  <text x="1092" y="547" font-size="10" fill="#63A1FF" letter-spacing="2">LIVE</text>
 </svg>
           </div><a class="APISection_col__p1cjB APISection_colLink__AmOri"
             style="--grid-lg-area:6 / 4;--grid-md-area:6 / 3;--grid-area:8 / 2"
-            href="https://ankitmaurya-tax-os-clone.netlify.app/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+            href="https://github.com/ankitmaurya-byte/taxOS" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 16 16" style="align-self:flex-end">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                 d="M6.25 3.75h6m0 0v6m0-6-8.5 8.5"></path>
