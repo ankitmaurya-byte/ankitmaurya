@@ -90,13 +90,13 @@
       const dockButtons = document.querySelectorAll('.block-showcase_appButton__RgyPw');
       const showcaseReel = document.querySelector('.Features_showcaseReel__g17fo');
 
-      const allALSOWindows = document.querySelectorAll('.ALSOWindow_alsoWindowOuter__IPv1c');
-      const datamingleWindow = document.querySelector('.CalculatorTimeShowcase_alsoWindowOuter__4FPqB');
+      const allWindows = document.querySelectorAll('.Window_WindowOuter__IPv1c');
+      const datamingleWindow = document.querySelector('.CalculatorTimeShowcase_WindowOuter__4FPqB');
 
       const windows = [
-        allALSOWindows[0],
-        allALSOWindows[1],
-        allALSOWindows[2],
+        allWindows[0],
+        allWindows[1],
+        allWindows[2],
         datamingleWindow
       ];
 
@@ -398,7 +398,7 @@
 
     // Initialize Question Finder animation
     function initQuestionFinderAnimation() {
-      const questionFinderElement = document.getElementById('alsoankit_question_finder');
+      const questionFinderElement = document.getElementById('ankit_question_finder');
       const discElement = document.querySelector('.ApiFig6_disc__zHSIe');
 
       if (questionFinderElement && discElement) {
@@ -422,14 +422,14 @@
       }
     }
 
-    // Initialize Bundlwise section animation (adds classes once when visible)
-    function initBundlwiseAnimation() {
-      const bundlwiseElement = document.getElementById('alsoankit_bundlwise_section');
+    // Initialize Timeline section animation (adds classes once when visible)
+    function initTimelineAnimation() {
+      const TimelineElement = document.getElementById('ankit_Timeline_section');
 
-      if (bundlwiseElement) {
+      if (TimelineElement) {
         let hasAnimated = false; // Flag to ensure animation happens only once
 
-        const bundlwiseObserver = new IntersectionObserver((entries) => {
+        const TimelineObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && !hasAnimated) {
               // Add all the active classes once
@@ -462,7 +462,7 @@
           threshold: 0.5 // Trigger when 50% of the element is visible
         });
 
-        bundlwiseObserver.observe(bundlwiseElement);
+        TimelineObserver.observe(TimelineElement);
       } else {
         
       }
@@ -474,14 +474,14 @@
         initDockFunctionality();
         initApiFig2Animations();
         initQuestionFinderAnimation();
-        initBundlwiseAnimation();
+        initTimelineAnimation();
         initUbuntuButtonAnimations();
       });
     } else {
       initDockFunctionality();
       initApiFig2Animations();
       initQuestionFinderAnimation();
-      initBundlwiseAnimation();
+      initTimelineAnimation();
       initUbuntuButtonAnimations();
     }
 
